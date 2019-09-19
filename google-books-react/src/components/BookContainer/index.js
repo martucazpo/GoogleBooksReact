@@ -14,7 +14,8 @@ class BookContainer extends Component {
     title: "",
     authors: "",
     thumbnail: "",
-    description: ""
+    description: "",
+    link: ""
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -27,8 +28,9 @@ class BookContainer extends Component {
       .then(res => this.setState({ result: res.data,
       title : res.data.items[0].volumeInfo.title,
       authors : res.data.items[0].volumeInfo.authors,
-      thumbnail : res.data.items[0].volumeInfo.thumbnail,
-      description : res.data.items[0].volumeInfo.description
+      thumbnail : res.data.items[0].volumeInfo.imageLinks.thumbnail,
+      description : res.data.items[0].volumeInfo.description,
+      link : res.data.items[0].volumeInfo.previewLink
      }))
       .catch(err => console.log(err));
   };
@@ -45,7 +47,22 @@ class BookContainer extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchBooks(this.state.search);
-    console.log(this.state.result.items[0].volumeInfo);
+    console.log(this.state.result.items[0].volumeInfo.imageLinks.thumbnail);
+  };
+
+  handleFormSave = event => {
+    event.preventDefault();
+    if (this.state.title) {
+      API.saveBook({
+        title: this.state.title,
+        authors: this.state.authors,
+        description: this.state.description,
+        image: this.state.thumbnail,
+        link: this.state.link
+      })
+        .then(res => this.loadBooks())
+        .catch(err => console.log(err));
+    }
   };
 
   render() {
@@ -59,9 +76,10 @@ class BookContainer extends Component {
               {this.state.result ? (
                 <BookDetail
                   title={this.state.title}
-                  image={this.state.thumbnail}
+                  thumbnail={this.state.thumbnail}
                   authors={this.state.authors}
                   description={this.state.description}
+                  link={this.state.link}
                 />
               ) : (
                 <h3>No Results to Display</h3>

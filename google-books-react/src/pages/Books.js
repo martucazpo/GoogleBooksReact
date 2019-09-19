@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import BookContainer from "../components/BookContainer";
-//import DeleteBtn from "../components/DeleteBtn";
+import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
-//import API from "../utils/API";
-//import { Link } from "react-router-dom";
+import API from "../utils/API";
+import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-//import { List, ListItem } from "../components/List";
+import { List, ListItem } from "../components/List";
 
 class Books extends Component {
   state = {
@@ -13,18 +13,18 @@ class Books extends Component {
     title: "",
     author: "",
     description: "",
-    image: "",
+    thumbnail: "",
     link: "",
   };
 
-/*  componentDidMount() {
+  componentDidMount() {
     this.loadBooks();
   }
 
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", description: "", image: "", link:"" })
+        this.setState({ books: res.data, title: "", author: "", description: "", thumbnail: "", link:"" })
       )
       .catch(err => console.log(err));
   };
@@ -49,13 +49,13 @@ class Books extends Component {
         title: this.state.title,
         authors: this.state.authors,
         description: this.state.description,
-        image: this.state.image,
+        thumbnail: this.state.thumbnail,
         link: this.state.link
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
     }
-  };*/
+  };
 
   render() {
     return (
@@ -67,7 +67,7 @@ class Books extends Component {
             </Jumbotron>
             <BookContainer></BookContainer>
          </Col>
-        {/*  <Col size="md-6 sm-12">
+          <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Books On My List</h1>
             </Jumbotron>
@@ -87,7 +87,7 @@ class Books extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col> */}
+          </Col> 
         </Row>
       </Container>
     );

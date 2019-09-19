@@ -3,10 +3,12 @@ import React from "react";
 function BookDetail(props) {
   return (
     <div className="text-center">
-      <img alt={props.title} className="img-fluid" image={props.thumbnail} style={{ margin: "0 auto" }} />
-      <h3>Author(s): {props.authors}</h3>
+    <img src={props.thumbnail} image={props.thumbnail} alt={props.title} className="img-fluid" style={{ margin: "0 auto" }}/>
+      <strong>Author(s): {props.authors}</strong>
       <p>{props.description}</p>
-    </div>
+      <a href={props.link} >See Book on Google</a>
+      <button onClick={props.handleFormSave} className="btn btn-primary">Save A Book!</button>
+      </div>
   );
 }
 
