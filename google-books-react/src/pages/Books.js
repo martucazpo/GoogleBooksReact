@@ -42,9 +42,9 @@ class Books extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormSave = event => {
     event.preventDefault();
-    if (this.state.title && this.state.authors) {
+    if (this.state.title) {
       API.saveBook({
         title: this.state.title,
         authors: this.state.authors,
@@ -65,7 +65,9 @@ class Books extends Component {
             <Jumbotron>
               <h1>What Books Should I Read?</h1>
             </Jumbotron>
-            <BookContainer></BookContainer>
+            <BookContainer
+            handleFormSave={this.handleFormSave}
+            loadBooks={this.loadBooks}></BookContainer>
          </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>

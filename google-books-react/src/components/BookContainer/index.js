@@ -35,6 +35,15 @@ class BookContainer extends Component {
       .catch(err => console.log(err));
   };
 
+  
+  loadBooks = () => {
+    API.getBooks()
+      .then(res =>
+        this.setState({ books: res.data, title: "", author: "", description: "", thumbnail: "", link:"" })
+      )
+      .catch(err => console.log(err));
+  };
+
   handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
@@ -80,6 +89,7 @@ class BookContainer extends Component {
                   authors={this.state.authors}
                   description={this.state.description}
                   link={this.state.link}
+                  handleFormSave={this.handleFormSave}
                 />
               ) : (
                 <h3>No Results to Display</h3>
