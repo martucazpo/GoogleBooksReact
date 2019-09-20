@@ -1,5 +1,8 @@
 
 const db = require("../models");
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlereads");
 
 
 // Defining methods for the booksController

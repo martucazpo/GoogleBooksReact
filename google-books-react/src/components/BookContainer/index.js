@@ -59,6 +59,11 @@ class BookContainer extends Component {
     console.log(this.state.result.items[0].volumeInfo.imageLinks.thumbnail);
   };
 
+  handleLocation = () => {
+    window.open(this.state.link);
+    };
+
+
   handleFormSave = event => {
     event.preventDefault();
     if (this.state.title) {
@@ -90,6 +95,7 @@ class BookContainer extends Component {
                   description={this.state.description}
                   link={this.state.link}
                   handleFormSave={this.handleFormSave}
+                  handleLocation={this.handleLocation}
                 />
               ) : (
                 <h3>No Results to Display</h3>

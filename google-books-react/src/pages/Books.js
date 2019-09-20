@@ -11,7 +11,7 @@ class Books extends Component {
   state = {
     books: [],
     title: "",
-    author: "",
+    authors: "",
     description: "",
     thumbnail: "",
     link: "",
@@ -24,7 +24,7 @@ class Books extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", description: "", thumbnail: "", link:"" })
+        this.setState({ books: res.data, title: "", authors: "", description: "", thumbnail: "", link:"" })
       )
       .catch(err => console.log(err));
   };
@@ -79,7 +79,7 @@ class Books extends Component {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.title} by {book.authors}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
