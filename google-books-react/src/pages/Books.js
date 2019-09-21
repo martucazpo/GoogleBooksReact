@@ -6,6 +6,8 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+import "./books.css";
+//import { url } from "inspector";
 
 class Books extends Component {
   state = {
@@ -24,7 +26,7 @@ class Books extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", authors: "", description: "", thumbnail: "", link:"" })
+        this.setState({ books: res.data })
       )
       .catch(err => console.log(err));
   };

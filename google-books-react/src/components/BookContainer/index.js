@@ -6,6 +6,7 @@ import Card from "./Card";
 import SearchForm from "./SearchForm";
 import BookDetail from "./BookDetail";
 import API from "../../utils/API";
+import "./style.css";
 
 class BookContainer extends Component {
   state = {
