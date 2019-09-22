@@ -12,7 +12,7 @@ function BookDetail(props) {
       <button onClick={props.handleLocation} className="btn btn-primary" >See Book on Google</button>
       </div>
       <div>
-      <button onClick={props.handleFormSave} className="btn btn-primary" style={{ marginTop: "5px" }}>Save Book to Your List</button>
+      <button onClick={ () => {props.handleFormSave(); props.handleLocationReload();}} className="btn btn-primary" style={{ marginTop: "5px" }}>Save Book to Your List</button>
       </div>
       </div>
   );

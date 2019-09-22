@@ -1,15 +1,14 @@
 import React from "react";
+import "./style.css";
 
-function Nav() {
+
+function Nav(){
   return (
-    <div className="fred">
     <nav className="navbar">
-      <a className="navbar-brand" href="/">
-        Google Reads!
-      </a>
+    <a className="navbar-brand" href="/">Google Reads!</a>
     </nav>
-    </div>
   );
-}
+  };
+
 
 export default Nav;

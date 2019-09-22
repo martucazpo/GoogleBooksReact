@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Redirect} from "react-router-dom";
 import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
@@ -16,7 +17,8 @@ class BookContainer extends Component {
     authors: "",
     thumbnail: "",
     description: "",
-    link: ""
+    link: "",
+    redirect: false
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -64,9 +66,12 @@ class BookContainer extends Component {
     window.open(this.state.link);
     };
 
+  handleLocationReload = () => {
+    window.location.reload();
+  };
+
 
   handleFormSave = event => {
-    event.preventDefault();
     if (this.state.title) {
       API.saveBook({
         title: this.state.title,
@@ -76,7 +81,7 @@ class BookContainer extends Component {
         thumbnail: this.state.thumbnail,
         link: this.state.link
       })
-        .then(res => { console.log(res.data)})
+        .then(console.log("saved"))
         .catch(err => console.log(err));
     }
   };
@@ -98,6 +103,7 @@ class BookContainer extends Component {
                   link={this.state.link}
                   handleFormSave={this.handleFormSave}
                   handleLocation={this.handleLocation}
+                  handleLocationReload={this.handleLocationReload}
                 />
               ) : (
                 <h3>No Results to Display</h3>

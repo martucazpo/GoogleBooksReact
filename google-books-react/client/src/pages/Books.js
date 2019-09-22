@@ -6,6 +6,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+import Nav from "../components/Nav";
 import "./books.css";
 //import { url } from "inspector";
 
@@ -69,6 +70,7 @@ class Books extends Component {
   render() {
     return (
       <div className="books-back">
+        <Nav></Nav>
       <Container fluid>
         <Row>
           <Col size="md-6">
@@ -82,6 +84,7 @@ class Books extends Component {
           <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>Books On My List</h1>
+              <p>Click on the Book's Title to See More Details</p>
             </Jumbotron>
             {this.state.books.length ? (
               <List>

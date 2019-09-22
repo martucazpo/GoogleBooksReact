@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import OtherJumbotron from "../components/OtherJumbotron";
 import API from "../utils/API";
+import Nav from "../components/Nav";
 import "./detail.css";
 
 class Detail extends Component {
@@ -20,6 +21,7 @@ class Detail extends Component {
   render() {
     return (
       <div className="detail-back">
+        <Nav></Nav>
       <Container fluid>
         <Row>
           <Col size="md-12">
