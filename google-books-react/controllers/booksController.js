@@ -1,8 +1,5 @@
 
 const db = require("../models");
-const mongoose = require("mongoose");
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlereads");
 
 
 // Defining methods for the booksController
@@ -20,11 +17,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log('hit create')
+    console.log(req.body);
     db.Book
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-      console.log("created");
   },
   update: function(req, res) {
     db.Book

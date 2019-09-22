@@ -1,0 +1,17 @@
+.books-back{
+    background-image:url("../images/zetong-li-NAP14GEjvh8-unsplash.jpg");
+    background-size: cover;
+   min-width: 100%;
+   min-height: 100%;
+}
+
+.fred{
+    background-image:url("../images/zetong-li-NAP14GEjvh8-unsplash.jpg");
+}
+
+#Betty{
+    background-color: orange;
+    color: white;
+}
+
+
