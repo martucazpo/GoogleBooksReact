@@ -14,11 +14,11 @@ Finally, if the user wishes to revisit the particulars of the chosen book, he or
 
 This app, while simple, is a great introduction to create-react-app. It teaches:
 
-*basic react state and setState
-*basic event handlers and componentDidMount
-*basic routing and API calls
-*Mongodb and Mongoose
-*basic react Ui, className and component styling
+* basic react state and setState
+* basic event handlers and componentDidMount
+* basic routing and API calls
+* Mongodb and Mongoose
+* basic react Ui, className and component styling
 
 In all it offers a strong base on which to build larger more complex react apps.
 
