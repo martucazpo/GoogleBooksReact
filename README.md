@@ -22,3 +22,6 @@ This app, while simple, is a great introduction to create-react-app. It teaches:
 
 In all it offers a strong base on which to build larger more complex react apps.
 
+##Where to Find
+
+This app is deployed on Heroku at https://shrouded-inlet-36558.herokuapp.com/
